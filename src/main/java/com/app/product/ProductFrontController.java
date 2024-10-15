@@ -8,12 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
-import com.app.product.controller.ProductDeleteOkController;
-import com.app.product.controller.ProductListController;
-import com.app.product.controller.ProductReadController;
-import com.app.product.controller.ProductUpdateController;
-import com.app.product.controller.ProductUpdateOkController;
-import com.app.product.controller.ProductWriteOkController;
 
 public class ProductFrontController extends HttpServlet{
 	
@@ -28,17 +22,11 @@ public class ProductFrontController extends HttpServlet{
 			result = new Result();
 			result.setPath("write.jsp");
 		}else if(target.equals("write-ok")) {
-			result = new ProductWriteOkController().execute(req, resp);
 		}else if(target.equals("list")) {
-			result = new ProductListController().execute(req, resp);
 		}else if(target.equals("read")) {
-			result = new ProductReadController().execute(req, resp);		
 		}else if(target.equals("update")) {
-			result = new ProductUpdateController().execute(req, resp);
 		}else if(target.equals("update-ok")) {
-			result = new ProductUpdateOkController().execute(req, resp);
 		}else if(target.equals("delete-ok")) {
-			result = new ProductDeleteOkController().execute(req, resp);
 		}else {
 //			전부 notFound 404
 		}
